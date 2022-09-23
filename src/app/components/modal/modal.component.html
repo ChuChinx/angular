@@ -1,0 +1,14 @@
+
+<div [formGroup]="form">
+    <mat-form-field appearance="legacy">
+        <mat-label>TITULO</mat-label>
+        <input matInput placeholder="" formControlName="titulo">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>TIEMPO</mat-label>
+        <input matInput placeholder="" formControlName="tiempo">
+    </mat-form-field>
+    <div>
+        <button mat-raised-button color="primary" (click)="addTarea()">Guardar</button>
+    </div>
+</div>

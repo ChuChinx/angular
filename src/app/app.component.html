@@ -1,0 +1,31 @@
+<div class="container">
+	<h1>Prueba técnica - Devmente</h1>
+	<h2>Listado de tareas</h2>
+	<!-- <ol>
+		<li *ngFor="let tarea of tareas">{{tarea.titulo}} ({{tarea.minutos}} minutos)</li>
+	</ol> -->
+	<div>
+		<button mat-raised-button color="primary" (click)="addTarea()">Añadir</button>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Nro.</th>
+				<th>Tarea</th>
+				<th>Tiempo</th>
+				<th>Eliminar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let tarea of tareas">
+				<td> {{tarea.id}} </td>
+				<td> {{tarea.titulo}} </td>
+				<td> {{tarea.minutos}} minutos </td>
+				<td>
+					<button>Eliminar</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
