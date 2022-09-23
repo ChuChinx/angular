@@ -24,13 +24,14 @@ export class ModalComponent implements OnInit {
   }
 
   addTarea(): void {
+    const cantidad = this.service.obtenerTareas().length;
     const formValue = this.form.value;
     const data = {
       titulo: formValue.titulo,
       minutos: parseInt(formValue.tiempo)
     }
     console.log(data);
-    this.service.addTarea(formValue.titulo, parseInt(formValue.tiempo));
+    this.service.addTarea(cantidad+1, formValue.titulo, parseInt(formValue.tiempo));
 
     
   }

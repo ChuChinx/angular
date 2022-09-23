@@ -14,7 +14,7 @@ export class AppService {
 
     ) { }
 
-    public async obtenerTareas() {
+    public obtenerTareas() {
         try {
             // var tareas: Tarea[] = [];
             // tareas.push(new Tarea(1, 'Alimentar al gato', 15));
@@ -28,9 +28,9 @@ export class AppService {
         }
     }
 
-    public addTarea(tarea: string, tiempo: number) {
+    public addTarea(id: number, tarea: string, tiempo: number) {
         this.tareas.push({
-            id: 6,
+            id,
             titulo: tarea,
             minutos: tiempo
         });

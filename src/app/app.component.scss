@@ -11,4 +11,21 @@ table {
 }
 td {
     text-align: center;
+    border: 1px solid #E6E6E6;
+    padding: 0 1rem;
+}
+th {
+    background-color: #8f9bca;
+    color: #fff;
+    font-weight: 400;
+}
+thead {
+    height: 2rem;
+}
+.boton-opciones button {
+    margin: 1rem;
+}
+.destacado {
+    font-weight: 600;
+    color: #e5e;
 }

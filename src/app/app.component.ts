@@ -21,8 +21,8 @@ export class AppComponent {
 		this.obtenerTareas();
 	}
 
-	async obtenerTareas() {
-		this.tareas = await this.service.obtenerTareas();
+	obtenerTareas() {
+		this.tareas = this.service.obtenerTareas();
 		console.log(this.tareas);
 		
 	}
@@ -36,5 +36,25 @@ export class AppComponent {
 			width: '600px',
 			disableClose: false
 		});	
+	}
+
+	eliminarFila(index: number): void {
+		console.log(index);
+		console.log(this.service.obtenerTareas());
+		
+		this.service.obtenerTareas().splice(index, 1);
+		this.obtenerTareas();
+	}
+
+	ordenarTarea(): void {
+		this.service.obtenerTareas().sort((a, b) => a.minutos - b.minutos);
+		this.obtenerTareas();
+	}
+
+	marcarFila(index: number): void {
+		console.log(index);
+		const body = document.getElementById('tbody_id') as HTMLInputElement;
+		const destacado = <Element>body.childNodes[index];
+		destacado.classList.add("destacado");
 	}
 }

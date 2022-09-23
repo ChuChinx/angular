@@ -4,25 +4,34 @@
 	<!-- <ol>
 		<li *ngFor="let tarea of tareas">{{tarea.titulo}} ({{tarea.minutos}} minutos)</li>
 	</ol> -->
-	<div>
+	<div class="boton-opciones">
 		<button mat-raised-button color="primary" (click)="addTarea()">Añadir</button>
+		<button mat-raised-button color="primary" (click)="ordenarTarea()">Ordenar de menor a mayor</button>
 	</div>
 	<table>
 		<thead>
 			<tr>
-				<th>Nro.</th>
+				<th>ID</th>
 				<th>Tarea</th>
 				<th>Tiempo</th>
 				<th>Eliminar</th>
+				<th>Marcar</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr *ngFor="let tarea of tareas">
+		<tbody id="tbody_id">
+			<tr *ngFor="let tarea of tareas; let i = index">
 				<td> {{tarea.id}} </td>
 				<td> {{tarea.titulo}} </td>
 				<td> {{tarea.minutos}} minutos </td>
 				<td>
-					<button>Eliminar</button>
+					<button mat-icon-button (click)="eliminarFila(i)">
+						<mat-icon>delete</mat-icon>
+					</button>
+				</td>
+				<td>
+					<button mat-icon-button (click)="marcarFila(i)">
+						<mat-icon>star</mat-icon>
+					</button>
 				</td>
 			</tr>
 		</tbody>
