@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		AppComponent,
 		ModalComponent
 	],
+	entryComponents: [ModalComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
